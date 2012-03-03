@@ -7,8 +7,10 @@ ln -s $DIR/vim/.vimrc ~/
 # MC
 ln -s $DIR/mc/.mc ~/
 
-# BASH
-ln -s $DIR/bashrc/.bash_functions.bash ~/
+# Bashrc
+ln -s $DIR/bashrc/.bashrc ~/
+ln -s $DIR/bashrc/.bash_aliases ~/
+ln -s $DIR/bashrc/.bash_functions ~/
 
 # Byobu
 ln -s $DIR/byobu/.byobu ~/

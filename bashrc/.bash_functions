@@ -14,7 +14,6 @@ runVi ()
     fi
 }
 
-
 genpasswd() 
 {
     local l=$1
