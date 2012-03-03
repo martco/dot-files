@@ -4,4 +4,4 @@
 #screen -t web w3m
 #screen -t shell byobu-shell
 screen -t "Home" 0 byobu-shell
-screen -t "music player" 4 ncmpcpp
+screen -t "music player" 9 ncmpcpp
