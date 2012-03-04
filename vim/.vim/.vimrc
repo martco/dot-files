@@ -386,7 +386,7 @@ map <Leader>dt <Plug>VimwikiTabMakeDiaryNote
 map <Leader>i <Plug>VimwikiDiaryIndex
 map <Leader>rr <Plug>VimwikiRenameLink
 map <Leader>dd <Plug>VimwikiDeleteLink
-map <Leader>t <Plug>VimwikiTabIndex
+map <Leader>T <Plug>VimwikiTabIndex
 
 " ------------------------------------------------------------------ 
 " Desc: Octave

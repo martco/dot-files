@@ -16,7 +16,7 @@ git_bundles = %w{
 
   git://github.com/pangloss/vim-javascript.git
 
-  git://git.wincent.com/command-t.git
+  git://github.com/wincent/Command-T.git
 
   git://github.com/vim-scripts/vimwiki.git
 

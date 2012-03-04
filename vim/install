@@ -10,3 +10,5 @@ ln -s $DIR/.vim ~/
 ln -s $DIR/.vimrc ~/
 
 ./.vim/update_bundles
+cd ./.vim/bundle/Command-T/
+rake make
