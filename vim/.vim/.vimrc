@@ -162,7 +162,7 @@ nnoremap <unique> <leader>m :let @/=""<CR>
 
 
 map <leader>pp :setlocal paste!<cr>
-map <leader>e :e! ~/.vimrc_ex<cr>
+map <leader>e :e! ~/.vim/.vimrc<cr>
 
 " Show numbers to the left
 map <F3> :set nonumber!<CR>:set foldcolumn=0<CR>
@@ -363,6 +363,30 @@ nmap <Leader>gu :Git pull<CR>
 nmap <Leader>gd :Gdiff<CR>
 " Exit a diff by closing the diff window
 nmap <Leader>gx :wincmd h<CR>:q<CR>
+
+" ------------------------------------------------------------------ 
+" Desc: vimwiki
+" ------------------------------------------------------------------ 
+"  Since <Leader>w Is mapped to save, we need to change vimwiki's default mappings
+map <Leader>W <Plug>VimwikiIndex
+map <Leader>Wb <Plug>VimwikiGoBackLink
+map <Leader>Wc <Plug>Vimwiki2HTML
+map <Leader>Wcc <Plug>Vimwiki2HTMLBrowse
+map <Leader>We <Plug>VimwikiSplitLink
+map <Leader>Wf <Plug>VimwikiFollowLink
+map <Leader>Wn <Plug>VimwikiNextLink
+map <Leader>Wp <Plug>VimwikiPrevLink
+map <Leader>Wq <Plug>VimwikiVSplitLink
+map <Leader>Ws <Plug>VimwikiUISelect
+map <Leader>Wt <Plug>VimwikiTabnewLink
+map <Leader>Wtl <Plug>VimwikiTableMoveColumnLeft
+map <Leader>Wtr <Plug>VimwikiTableMoveColumnRight
+map <Leader>d <Plug>VimwikiMakeDiaryNote
+map <Leader>dt <Plug>VimwikiTabMakeDiaryNote
+map <Leader>i <Plug>VimwikiDiaryIndex
+map <Leader>rr <Plug>VimwikiRenameLink
+map <Leader>dd <Plug>VimwikiDeleteLink
+map <Leader>t <Plug>VimwikiTabIndex
 
 " ------------------------------------------------------------------ 
 " Desc: Octave
