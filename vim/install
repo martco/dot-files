@@ -9,6 +9,14 @@ rm -rv ~/.vimrc
 ln -s $DIR/.vim ~/
 ln -s $DIR/.vimrc ~/
 
+# Install commandt
 ./.vim/update_bundles
 cd ./.vim/bundle/Command-T/
 rake make
+
+# install syntax for pyton
+pip install flake8
+
+# install syntax for js
+sudo apt-get install npm
+sudo npm install jshint -g
