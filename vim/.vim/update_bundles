@@ -10,11 +10,10 @@ git_bundles = %w{
   git://github.com/vim-scripts/buftabs.git
   git://github.com/vim-scripts/CmdlineComplete.git
   git://github.com/abudden/TagHighlight.git
+  git clone  git://github.com/majutsushi/tagbar.git
   git://github.com/garbas/vim-showmarks.git
 
   git://github.com/gerw/vim-latex-suite.git
-
-  git://github.com/pangloss/vim-javascript.git
 
   git://github.com/wincent/Command-T.git
 
@@ -26,6 +25,11 @@ git_bundles = %w{
 
   git://github.com/scrooloose/syntastic.git
   git://github.com/nvie/vim-flake8.git
+
+
+  git clone git://github.com/vim-scripts/jsbeautify.git
+
+  git://github.com/vim-scripts/EnhCommentify.vim.git
 
   git://github.com/garbas/vim-snipmate.git
   git://github.com/tUrG0n/snipmate-snippets.git

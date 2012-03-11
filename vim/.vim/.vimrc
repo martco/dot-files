@@ -4,7 +4,6 @@
 " ======================================================================================
 
 " With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
 
@@ -77,7 +76,7 @@ if has("gui_running")
     set guifont=monospace\ 9
     silent exec "colorscheme mine"
 else " if we are in terminal mode
-    silent exec "colorscheme default"
+    silent exec "colorscheme mine"
 endif
 
 " ------------------------------------------------------------------ 
@@ -152,6 +151,10 @@ set smartcase " Set smartcase mode on, If there is upper case character in the s
 " Fast saving and closing
 nmap <leader>w :w!<cr>
 nmap <leader>q :wq!<cr>
+" if file is js, then saving it will call Jsbeautify
+autocmd filetype javascript nmap <leader>w :call g:Jsbeautify()<cr>:w<cr>
+
+nmap <F4> :TagbarToggle<CR>
 
 map <unique> <leader>y "*y
 map <unique> <leader>p "*p
@@ -454,5 +457,14 @@ au FileType c,cpp,hlsl set completeopt=menuone
 autocmd BufRead *.cpp inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>i 
 autocmd BufRead *.cpp noremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr> 
 
+
 autocmd BufRead *.tex :call MyAbrv()
 au BufRead,BufNewFile *.ny setfiletype lisp
+
+
+"Higlight current line 
+set cursorline
+
+"Highlight cursor
+highlight CursorLine ctermbg=8 cterm=NONE
+
