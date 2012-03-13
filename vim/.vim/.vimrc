@@ -152,7 +152,7 @@ set smartcase " Set smartcase mode on, If there is upper case character in the s
 nmap <leader>w :w!<cr>
 nmap <leader>q :wq!<cr>
 " if file is js, then saving it will call Jsbeautify
-autocmd filetype javascript nmap <leader>w :call g:Jsbeautify()<cr>:w<cr>
+nmap <leader>ff :call g:Jsbeautify()<cr>
 
 nmap <F4> :TagbarToggle<CR>
 
@@ -179,8 +179,6 @@ map <C-l> <C-W>l
 " Undo ^^
 imap <C-z> <C-O>u
 
-" search tags 
-inoremap <unique> <c-]> <C-X><C-]>
 " search in current files, preview first. remove the original c-p
 " inoremap <unique> <c-p> <C-X><C-P>
 
@@ -468,3 +466,10 @@ set cursorline
 "Highlight cursor
 highlight CursorLine ctermbg=8 cterm=NONE
 
+
+" ------------------------------------------------------------------ 
+" Desc: TagBar
+" ------------------------------------------------------------------ 
+let g:tagbar_type_javascript = {
+    \ 'ctagsbin' : '/usr/local/bin/jsctags'
+\ }

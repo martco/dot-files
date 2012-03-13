@@ -289,7 +289,7 @@ fun! s:X(group, fg, bg, attr, lcfg, lcbg)
 endfun
 " }}}
 
-call s:X("Normal","e8e8d3","151515","","White","")
+call s:X("Normal","e8e8d3","121212","","White","")
 set background=dark
 
 if !exists("g:jellybeans_use_lowcolor_black") || g:jellybeans_use_lowcolor_black
@@ -316,7 +316,7 @@ call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor","","","","","")
 
 call s:X("LineNr","605958","151515","none",s:termBlack,"")
-call s:X("Comment","888888","","italic","Grey","")
+call s:X("Comment","555555","","italic","Green","")
 call s:X("Todo","808080","","bold","White",s:termBlack)
 
 call s:X("StatusLineNC","4EEE94","403c41","italic","","White")
@@ -335,23 +335,24 @@ call s:X("Constant","cf6a4c","","","Red","")
 call s:X("Special","ff5fd7","1c1c1c","","Green","")
 call s:X("Delimiter","668799","","","Grey","")
 
-call s:X("String","99ad6a","1c1c1c","","Green","")
+call s:X("String","458f54","","italic","Green","")
+call s:X("Tag","99ad6a","191919","","DarkGreen","")
 call s:X("StringDelimiter","556633","","","DarkGreen","")
 
-call s:X("Identifier","c6b6ee","","","LightCyan","")
+call s:X("Identifier","4fdfdc","","italic","LightCyan","")
 call s:X("Structure","8fbfdc","","","LightCyan","")
-call s:X("Function","fad07a","","","Yellow","")
+call s:X("Function","fa525a","","italic","Cyan","")
 call s:X("Statement","8197bf","","","DarkBlue","")
 call s:X("PreProc","8fbfdc","","","LightBlue","")
 
 hi! link Operator Normal
 
 call s:X("Type","ffb964","","","Yellow","")
-call s:X("NonText","606060","151515","",s:termBlack,"")
+call s:X("NonText","606060","101010","",s:termBlack,"")
 
 call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
 
-call s:X("Search","f0a0c0","302028","underline","Magenta","")
+call s:X("Search","f0a0c0","302028","underline","Green","")
 
 call s:X("Directory","dad085","","","Yellow","")
 call s:X("ErrorMsg","","902020","","","DarkRed")

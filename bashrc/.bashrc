@@ -156,3 +156,6 @@ else
         start_agent
     fi
 fi
+
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
