@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+
+# Make user own /usr/local/  after all this is where we want OUR program to run :)
+sudo chown -R $USER /usr/local
+
+# install npm to /usr/local/
+curl http://npmjs.org/install.sh | npm_config_prefix=/usr/local sh
+
+# npm modules
+npm install express
+npm install coffee-script
+npm install jslint
+npm install supervisor -g
