@@ -23,7 +23,7 @@ set nocompatible
 set laststatus=2
 
 " Format the statusline
-set statusline=\ %f%m%r%h\ %w\ \ Col:\ %c\ \ \ Line:\ %l/%L\ %p%%\ [%P]
+" set statusline=\ %f%m%r%h\ %w\ \ Col:\ %c\ \ \ Line:\ %l/%L\ %p%%\ [%P]
 
 " ------------------------------------------------------------------ 
 " Desc: Backup and Swap Folder
@@ -154,7 +154,7 @@ nmap <leader>q :wq!<cr>
 " if file is js, then saving it will call Jsbeautify
 nmap <leader>ff :call g:Jsbeautify()<cr>
 
-nmap <F4> :TagbarToggle<CR>
+nmap <F4> :NERDTree<CR>
 
 map <unique> <leader>y "*y
 map <unique> <leader>p "*p
