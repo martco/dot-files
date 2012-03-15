@@ -332,7 +332,7 @@ call s:X("ColorColumn","","000000","","",s:termBlack)
 call s:X("Title","70b950","","bold","Green","")
 
 call s:X("Constant","cf6a4c","","","Red","")
-call s:X("Special","ff5fd7","1c1c1c","","Green","")
+call s:X("Special","ff5fd7","","","Green","")
 call s:X("Delimiter","668799","","","Grey","")
 
 call s:X("String","458f54","","italic","Green","")
@@ -342,7 +342,7 @@ call s:X("StringDelimiter","556633","","","DarkGreen","")
 call s:X("Identifier","4fdfdc","","italic","LightCyan","")
 call s:X("Structure","8fbfdc","","","LightCyan","")
 call s:X("Function","fa525a","","italic","Cyan","")
-call s:X("Statement","8197bf","","","DarkBlue","")
+call s:X("Statement","8197bf","","bold","DarkBlue","")
 call s:X("PreProc","8fbfdc","","","LightBlue","")
 
 hi! link Operator Normal

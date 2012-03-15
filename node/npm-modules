@@ -17,5 +17,4 @@ npm install -g nodemon
 npm install -g mongoose
 npm install -g jade
 npm install -g markdown
-
-
+npm install formidable@latest

@@ -7,14 +7,19 @@
 let mapleader = ","
 let g:mapleader = ","
 
-call pathogen#infect()
-call pathogen#helptags()
 
+filetype off
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype plugin indent on
 
 " ------------------------------------------------------------------ 
 " Desc: General
 " ------------------------------------------------------------------ 
 set nocompatible
+set lazyredraw
+set ttyfast
 
 " ------------------------------------------------------------------ 
 " Desc: Statusline
@@ -35,13 +40,13 @@ let data_dir = $HOME.'/.data/'
 let backup_dir = data_dir . 'backup' 
 let swap_dir = data_dir . 'swap' 
 if finddir(data_dir) == ''
-    silent call mkdir(data_dir)
+	silent call mkdir(data_dir)
 endif
 if finddir(backup_dir) == ''
-    silent call mkdir(backup_dir)
+	silent call mkdir(backup_dir)
 endif
 if finddir(swap_dir) == ''
-    silent call mkdir(swap_dir)
+	silent call mkdir(swap_dir)
 endif
 set backupdir=$HOME/.data/backup " where to put backup file 
 set directory=$HOME/.data/swap " where to put swap file 
@@ -56,6 +61,7 @@ unlet swap_dir
 set viminfo+=! " make sure it can save viminfo 
 filetype on " enable file type detection 
 filetype plugin on " enable loading the plugin for appropriate file type 
+filetype plugin indent on
 
 set history=50 " keep 50 lines of command line history
 set updatetime=1000 " default = 4000
@@ -73,10 +79,10 @@ set nu " Show LineNumber
 
 " color scheme define
 if has("gui_running")
-    set guifont=monospace\ 9
-    silent exec "colorscheme mine"
+	set guifont=monospace\ 9
+	silent exec "colorscheme mine"
 else " if we are in terminal mode
-    silent exec "colorscheme mine"
+	silent exec "colorscheme mine"
 endif
 
 " ------------------------------------------------------------------ 
@@ -154,7 +160,7 @@ nmap <leader>q :wq!<cr>
 " if file is js, then saving it will call Jsbeautify
 nmap <leader>ff :call g:Jsbeautify()<cr>
 
-nmap <F4> :NERDTree<CR>
+nmap <F4> :NERDTreeToggle<CR>
 
 map <unique> <leader>y "*y
 map <unique> <leader>p "*p
@@ -209,28 +215,28 @@ cmap vsplit <Nop>
 " Desc: Only do this part when compiled with support for autocommands.
 " ------------------------------------------------------------------ 
 if has("autocmd")
-    " Enable file type detection.
-    " Use the default filetype settings, so that mail gets 'tw' set to 72,
-    " 'cindent' is on in C files, etc.
-    " Also load indent files, to automatically do language-dependent indenting.
-    filetype plugin indent on
+	" Enable file type detection.
+	" Use the default filetype settings, so that mail gets 'tw' set to 72,
+	" 'cindent' is on in C files, etc.
+	" Also load indent files, to automatically do language-dependent indenting.
+	filetype plugin indent on
 
-    " Put these in an autocmd group, so that we can delete them easily.
-    augroup vimrcEx
-        au!
+	" Put these in an autocmd group, so that we can delete them easily.
+	augroup vimrcEx
+		au!
 
-        " For all text files set 'textwidth' to 78 characters.
-        autocmd FileType text setlocal textwidth=78
+		" For all text files set 'textwidth' to 78 characters.
+		autocmd FileType text setlocal textwidth=78
 
-        " When editing a file, always jump to the last known cursor position.
-        " Don't do it when the position is invalid or when inside an event handler
-        " (happens when dropping a file on gvim).
-        autocmd BufReadPost *
-                    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                    \   exe "normal g`\"" |
-                    \ endif
+		" When editing a file, always jump to the last known cursor position.
+		" Don't do it when the position is invalid or when inside an event handler
+		" (happens when dropping a file on gvim).
+		autocmd BufReadPost *
+					\ if line("'\"") > 0 && line("'\"") <= line("$") |
+					\   exe "normal g`\"" |
+					\ endif
 
-    augroup END
+	augroup END
 endif " has("autocmd")
 
 " ------------------------------------------------------------------ 
@@ -317,17 +323,17 @@ nmap <unique> <C-F11> <Plug>DeComment
 " ======================================================== 
 
 function EnhCommentifyCallback(ft)
-    " for hlsl, swig, c
-    if a:ft =~ '^\(hlsl\|swig\|c\)$' " NOTE: we have to rewrite the c comment behavior. 
-        let b:ECcommentOpen = '//'
-        let b:ECcommentClose = ''
-    elseif a:ft == 'snippet' " for snippet
-        let b:ECcommentOpen = '#'
-        let b:ECcommentClose = ''
-    elseif a:ft == 'maxscript' " for maxscript
-        let b:ECcommentOpen = '--'
-        let b:ECcommentClose = ''
-    endif
+	" for hlsl, swig, c
+	if a:ft =~ '^\(hlsl\|swig\|c\)$' " NOTE: we have to rewrite the c comment behavior. 
+		let b:ECcommentOpen = '//'
+		let b:ECcommentClose = ''
+	elseif a:ft == 'snippet' " for snippet
+		let b:ECcommentOpen = '#'
+		let b:ECcommentClose = ''
+	elseif a:ft == 'maxscript' " for maxscript
+		let b:ECcommentOpen = '--'
+		let b:ECcommentClose = ''
+	endif
 endfunction
 let g:EnhCommentifyCallbackExists = 'Yes'
 
@@ -359,7 +365,7 @@ nmap <Leader>gc :Gcommit<CR>
 nmap <Leader>gw :Gwrite<CR>
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gp :Git push<CR>
- " Mnemonic, gu = Git Update
+" Mnemonic, gu = Git Update
 nmap <Leader>gu :Git pull<CR>
 nmap <Leader>gd :Gdiff<CR>
 " Exit a diff by closing the diff window
@@ -389,11 +395,14 @@ map <Leader>rr <Plug>VimwikiRenameLink
 map <Leader>dd <Plug>VimwikiDeleteLink
 map <Leader>T <Plug>VimwikiTabIndex
 
+
+
+
 " ------------------------------------------------------------------ 
 " Desc: Octave
 " ------------------------------------------------------------------ 
 augroup filetypedetect 
-    au! BufRead,BufNewFile *.m,*.oct set filetype=matlab
+	au! BufRead,BufNewFile *.m,*.oct set filetype=matlab
 augroup END 
 
 autocmd BufRead *.m,*.oct nmap <F5> :!clear && octave %<CR>
@@ -401,10 +410,10 @@ autocmd BufRead *.m,*.oct nmap <F12> :!ctags *.m<CR>
 
 " Use keywords from Octave syntax language file for autocomplete 
 if has("autocmd") && exists("+omnifunc") 
-    autocmd Filetype octave 
-                \    if &omnifunc == "" | 
-                \     setlocal omnifunc=syntaxcomplete#Complete | 
-                \    endif 
+	autocmd Filetype octave 
+				\    if &omnifunc == "" | 
+				\     setlocal omnifunc=syntaxcomplete#Complete | 
+				\    endif 
 endif 
 
 
@@ -415,19 +424,19 @@ endif
 vmap <F8> <ESC>:call AddAbbr()<CR>
 
 fun AddAbbr()
-    normal byw
-    let StringChar = visual#selection()
-    let val = input("Enter the abbreviation you wish to use for '" . StringChar . "' :")
-    exec "ia" StringChar val
-    silent call SaveAbbr(StringChar, val)
+	normal byw
+	let StringChar = visual#selection()
+	let val = input("Enter the abbreviation you wish to use for '" . StringChar . "' :")
+	exec "ia" StringChar val
+	silent call SaveAbbr(StringChar, val)
 endfun
 
 fun SaveAbbr(abbr, val)
-    redir >>~/.vim/plugin/autocorrectTurgon.vim 
-    "foo.txt is the file in which you wish to add your abbreviations. For me, it
-    "is ~/.vim/ftplugin/tex.vim
-    echo "iab" a:abbr a:val
-    redir END
+	redir >>~/.vim/plugin/autocorrectTurgon.vim 
+	"foo.txt is the file in which you wish to add your abbreviations. For me, it
+	"is ~/.vim/ftplugin/tex.vim
+	echo "iab" a:abbr a:val
+	redir END
 endfun
 
 " ------------------------------------------------------------------ 
@@ -443,6 +452,8 @@ autocmd BufRead *.py nmap <F5> :!clear && python %<CR>
 " Desc: TAGS
 " ------------------------------------------------------------------ 
 " programming related 
+
+
 au BufNewFile,BufEnter * set cpoptions+=d " NOTE: ctags find the tags file from the current path instead of the path of currect file
 
 " configure tags - add additional tags here or comment out not-used ones
@@ -466,10 +477,32 @@ set cursorline
 "Highlight cursor
 highlight CursorLine ctermbg=8 cterm=NONE
 
+" ------------------------------------------------------------------ 
+" Desc: Coffee
+" ------------------------------------------------------------------ 
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " ------------------------------------------------------------------ 
 " Desc: TagBar
 " ------------------------------------------------------------------ 
 let g:tagbar_type_javascript = {
-    \ 'ctagsbin' : '/usr/local/bin/jsctags'
-\ }
+			\ 'ctagsbin' : '/usr/local/bin/jsctags'
+			\ }
+
+nmap <F8> :TagbarToggle<CR>
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '--include-vars',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
