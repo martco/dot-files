@@ -7,7 +7,15 @@ sudo chown -R $USER /usr/local
 curl http://npmjs.org/install.sh | npm_config_prefix=/usr/local sh
 
 # npm modules
-npm install express
-npm install coffee-script
+npm install -g express
+npm install -g coffee-script
 npm install jslint
 npm install supervisor -g
+npm install -g coffeelint
+npm install -g connect
+npm install -g nodemon
+npm install -g mongoose
+npm install -g jade
+npm install -g markdown
+
+
