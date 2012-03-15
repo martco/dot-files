@@ -10,7 +10,7 @@ ln -s $DIR/.vim ~/
 ln -s $DIR/.vimrc ~/
 
 # Install commandt
-./.vim/update_bundles
+./.vim/installBundles
 cd ./.vim/bundle/Command-T/
 rake make
 
