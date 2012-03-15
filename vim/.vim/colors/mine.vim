@@ -342,7 +342,7 @@ call s:X("StringDelimiter","556633","","","DarkGreen","")
 call s:X("Identifier","4fdfdc","","italic","LightCyan","")
 call s:X("Structure","8fbfdc","","","LightCyan","")
 call s:X("Function","fa525a","","italic","Cyan","")
-call s:X("Statement","8197bf","","bold","DarkBlue","")
+call s:X("Statement","6f4cda","","bold","DarkBlue","")
 call s:X("PreProc","8fbfdc","","","LightBlue","")
 
 hi! link Operator Normal
