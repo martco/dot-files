@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+cd ./bundle/
+dirs=$(ls)
+
+for f in $dirs;
+do cd $f; git pull; cd ..;
+done;
+
