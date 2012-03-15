@@ -32,12 +32,13 @@ git_bundles = %w{
   git://github.com/djoshea/vim-matlab-fold.git
 
   git://github.com/vim-scripts/jsbeautify.git
+  git://github.com/kchmck/vim-coffee-script.git
   git://github.com/digitaltoad/vim-jade.git
 
   git://github.com/vim-scripts/EnhCommentify.vim.git
 
   git://github.com/garbas/vim-snipmate.git
-  git://github.com/tUrG0n/snipmate-snippets.git
+  git://github.com/honza/snipmate-snippets.git
   git://github.com/MarcWeber/vim-addon-mw-utils.git
   git://github.com/tomtom/tlib_vim.git
   git://github.com/tomtom/tcommand_vim.git
