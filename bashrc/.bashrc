@@ -159,3 +159,4 @@ fi
 
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+. ~/.nvm/nvm.sh

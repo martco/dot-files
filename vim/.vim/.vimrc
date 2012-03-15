@@ -393,7 +393,7 @@ map <Leader>T <Plug>VimwikiTabIndex
 " Desc: Octave
 " ------------------------------------------------------------------ 
 augroup filetypedetect 
-    au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
+    au! BufRead,BufNewFile *.m,*.oct set filetype=matlab
 augroup END 
 
 autocmd BufRead *.m,*.oct nmap <F5> :!clear && octave %<CR>
