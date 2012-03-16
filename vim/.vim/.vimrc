@@ -21,6 +21,7 @@ set nocompatible
 set lazyredraw
 set ttyfast
 set hlsearch
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " ------------------------------------------------------------------ 
 " Desc: Statusline
@@ -152,6 +153,8 @@ set smartcase " Set smartcase mode on, If there is upper case character in the s
 
 
 
+
+
 " ------------------------------------------------------------------ 
 " Desc: Key Mappings
 " ------------------------------------------------------------------ 
@@ -212,6 +215,20 @@ noremap <f2> :bnext<CR>
 " Remaps Vsplit to vsplit. I dunno why Vsplit is here in the first place! :P
 cmap vsplit <Nop>
 
+
+" Mappings for ctrlp
+fu! s:call_ctrlp_extension(ext)
+    if !exists('g:ctrlp_builtins')
+        ru autoload/ctrlp.vim
+    en
+    cal ctrlp#init(ctrlp#{a:ext}#id())
+endf
+
+" Then create some mappings:
+nn <silent> <leader><space>l :cal <SID>call_ctrlp_extension('line')<cr>
+nn <silent> <leader><space>s :cal <SID>call_ctrlp_extension('rtscript')<cr>
+
+
 " ------------------------------------------------------------------ 
 " Desc: Only do this part when compiled with support for autocommands.
 " ------------------------------------------------------------------ 
@@ -248,6 +265,20 @@ au BufEnter * :syntax sync fromstart " ensure every file does syntax highlightin
 " ------------------------------------------------------------------ 
 " Desc: PLUGINSS
 " ------------------------------------------------------------------ 
+" ------------------------------------------------------------------ 
+" Desc: Ctrlp
+" ------------------------------------------------------------------ 
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'line', 'undo', 'changes']
+
+" ------------------------------------------------------------------ 
+" Desc: Rainbow configuration
+" ------------------------------------------------------------------ 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au BufRead * RainbowParenthesesLoadRound " to make it work for ()
+
 " ------------------------------------------------------------------ 
 " Desc: OmniCppComplete
 " ------------------------------------------------------------------ 
