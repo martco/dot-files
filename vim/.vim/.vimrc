@@ -20,6 +20,7 @@ filetype plugin indent on
 set nocompatible
 set lazyredraw
 set ttyfast
+set hlsearch
 
 " ------------------------------------------------------------------ 
 " Desc: Statusline
