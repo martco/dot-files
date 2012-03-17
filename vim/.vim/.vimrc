@@ -270,14 +270,6 @@ au BufEnter * :syntax sync fromstart " ensure every file does syntax highlightin
 " ------------------------------------------------------------------ 
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'line', 'undo', 'changes']
 
-" ------------------------------------------------------------------ 
-" Desc: Rainbow configuration
-" ------------------------------------------------------------------ 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au BufRead * RainbowParenthesesLoadRound " to make it work for ()
 
 " ------------------------------------------------------------------ 
 " Desc: OmniCppComplete

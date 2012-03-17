@@ -36,7 +36,6 @@ git_bundles = %w{
 
   git clone git://github.com/mileszs/ack.vim.git
   git://github.com/kien/ctrlp.vim.git
-  git://github.com/kien/rainbow_parentheses.vim.git
 
   git://github.com/vim-scripts/EnhCommentify.vim.git
 
