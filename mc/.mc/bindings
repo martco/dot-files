@@ -496,7 +496,7 @@ type/^PostScript
 
 # PDF
 type/^PDF
-	Open=(evince %f)
+	Open=(evince %f &)
 	#Open=(acroread %f &)
 	#Open=(ghostview %f &)
 	View=%view{ascii} pdftotext %f -

@@ -58,6 +58,12 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Start tmux on every shell!
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ $TERM != "screen" ]] && tmux && exit
+
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
