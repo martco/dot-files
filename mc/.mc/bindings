@@ -528,6 +528,9 @@ shell/.abw
 	Open=(abiword %f &)
 
 # Microsoft Word Document
+regex/\.([Dd][Oo][Cc][Xx])$
+	Open=(libreoffice %f >/dev/null 2>&1 &)
+	View=%view{ascii} antiword -t %f || catdoc -w %f || word2x -f text %f - || strings %f
 regex/\.([Pp][Pp][Tt][Xx])$
 	Open=(libreoffice %f >/dev/null 2>&1 &)
 	View=%view{ascii} antiword -t %f || catdoc -w %f || word2x -f text %f - || strings %f
