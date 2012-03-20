@@ -1,4 +1,6 @@
 #!/bin/bash
+# As taken from here: https://github.com/taq/vim-bundles-updater
+
 logfile=/tmp/update_vim_bundles_$$.log
 changes=""
 showchanges="no"
