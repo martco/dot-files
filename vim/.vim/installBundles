@@ -44,7 +44,7 @@ git_bundles = %w{
   git://github.com/MarcWeber/vim-addon-mw-utils.git
   git://github.com/tomtom/tlib_vim.git
   git://github.com/tomtom/tcommand_vim.git
-  git://github.com/plasticboy/vim-markdown.git
+  git://github.com/tpope/vim-markdown.git
 }
 
 require 'fileutils'
