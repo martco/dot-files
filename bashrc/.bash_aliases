@@ -32,6 +32,7 @@ alias doc2pdf='libreoffice --headless --convert-to pdf'
 # Coding
 alias svnclean="svn status | tr -s ' ' | grep '\!' | sed 's/\! /\"/g' | sed 's/$/\"/g' | xargs svn rm"
 alias gitclean="git st | grep deleted | tr -s ' ' | cut -d ' ' -f 2 | xargs git rm"
+alias gitmodified="git st | grep modified | tr -s ' ' | cut -d ' ' -f 2 | xargs git add"
 alias Mc='sudo mc'
 alias vi='runVi'
 alias man='gnome-terminal --full-screen --window-with-profile=Coding -x man'
