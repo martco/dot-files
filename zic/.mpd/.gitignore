@@ -2,4 +2,4 @@ log
 mpd.db
 mpd.log
 mpd.pid
-mpd.state
+mpdstate
