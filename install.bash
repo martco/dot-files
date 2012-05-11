@@ -15,3 +15,7 @@ ln -s $DIR/bashrc/.bash_functions ~/
 # Byobu
 ln -s $DIR/byobu/.byobu ~/
 ln -s $DIR/byobu/.screenrc ~/
+
+# Zic
+ln -s $DIR/zic/.mpd ~/
+ln -s $DIR/zic/.ncmpcpp ~/
