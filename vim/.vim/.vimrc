@@ -126,8 +126,8 @@ set	cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,l0,b0,g0,hs,ps,ts,is,+s,c3,C0,0,(0,us,
 " default '0{,0},0),:,0#,!^F,o,O,e' disable 0# for not ident preprocess
 " set cinkeys=0{,0},0),:,!^F,o,O,e
 
-set cindent shiftwidth=3 " Set cindent on to autoinent when editing C/C++ file, with 4 shift width
-set tabstop=3 " Set tabstop to 4 characters
+set cindent shiftwidth=2 " Set cindent on to autoinent when editing C/C++ file, with 4 shift width
+set tabstop=2 " Set tabstop to 4 characters
 
 " Set Number format to null(default is octal) , when press CTRL-A on number
 " like 007, it would not become 010
@@ -504,7 +504,7 @@ highlight CursorLine ctermbg=8 cterm=NONE
 " ------------------------------------------------------------------ 
 " Desc: Coffee
 " ------------------------------------------------------------------ 
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " ------------------------------------------------------------------ 
