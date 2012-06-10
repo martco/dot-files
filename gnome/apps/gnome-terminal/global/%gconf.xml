@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="use_mnemonics" mtime="1309298180" schema="/schemas/apps/gnome-terminal/global/use_mnemonics" type="bool" value="false"/>
+	<entry name="use_menu_accelerators" mtime="1309298180" schema="/schemas/apps/gnome-terminal/global/use_menu_accelerators" type="bool" value="false"/>
+	<entry name="confirm_window_close" mtime="1309298180" schema="/schemas/apps/gnome-terminal/global/confirm_window_close" type="bool" value="true"/>
+	<entry name="active_encodings" mtime="1309298180" schema="/schemas/apps/gnome-terminal/global/active_encodings" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>UTF-8</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>current</stringvalue>
+		</li>
+	</entry>
+	<entry name="default_profile" mtime="1309298180" schema="/schemas/apps/gnome-terminal/global/default_profile" type="string">
+		<stringvalue>Profile0</stringvalue>
+	</entry>
+	<entry name="profile_list" mtime="1309298180" schema="/schemas/apps/gnome-terminal/global/profile_list" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>Default</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>Profile0</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>Profile1</stringvalue>
+		</li>
+	</entry>
+</gconf>
