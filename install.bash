@@ -1,4 +1,12 @@
 DIR=$(pwd)
+
+# Clean
+rm ~/.vim ~/.vimrc 
+rm ~/.mc
+rm ~/.bashrc ~/.bash_aliases ~/.bash_functions
+rm ~/.mpd ~/.ncmpcpp
+rm ~/.tmux.conf 
+
     
 # VIM
 ln -s $DIR/vim/.vim ~/
@@ -12,10 +20,9 @@ ln -s $DIR/bashrc/.bashrc ~/
 ln -s $DIR/bashrc/.bash_aliases ~/
 ln -s $DIR/bashrc/.bash_functions ~/
 
-# Byobu
-ln -s $DIR/byobu/.byobu ~/
-ln -s $DIR/byobu/.screenrc ~/
-
 # Zic
 ln -s $DIR/zic/.mpd ~/
 ln -s $DIR/zic/.ncmpcpp ~/
+
+# Tmux
+ln -s $DIR/tmux/.tmux.conf ~/
