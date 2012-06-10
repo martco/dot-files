@@ -14,6 +14,8 @@ ln -s $DIR/vim/.vimrc ~/
 
 # MC
 ln -s $DIR/mc/.mc ~/
+mkdir ~/.local/share/mc/skins/
+ln -s $DIR/mc/.mc/skins/mine.ini ~/.local/share/mc/skins/
 
 # Bashrc
 ln -s $DIR/bashrc/.bashrc ~/
