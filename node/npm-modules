@@ -7,7 +7,7 @@ sudo chown -R $USER /usr/local
 sudo apt-get install python-software-properties
 sudo apt-add-repository ppa:chris-lea/node.js
 sudo apt-get update
-sudo apt-get install nodejs npm
+sudo apt-get install nodejs
 
 # install npm to /usr/local/
 curl http://npmjs.org/install.sh | npm_config_prefix=/usr/local sh
@@ -22,4 +22,9 @@ npm install -g mongoose
 npm install -g jade
 npm install -g html2jade
 npm install -g markdown
+npm install -g stylus
+npm install jshint -g
+npm install -g jitsu
+npm install -g uglify-js
+npm install -g socket.io
 npm install -g stylus
