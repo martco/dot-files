@@ -15,8 +15,5 @@ cd ./.vim/bundle/Command-T/
 rake make
 
 # install syntax for pyton
+sudo apt-get install python-pip
 pip install flake8
-
-# install syntax for js
-sudo apt-get install npm
-sudo npm install jshint -g

@@ -201,7 +201,6 @@ nnoremap <unique> <silent><leader>sw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/
 
 map <CR> o<Esc>
 " set Ctrl+j in insert mode, like VS.Net
-imap <C-j> <C-X><C-O>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Copy and Paste As found here: http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipboard?fb_ref=content_page&fb_source=profile_oneline
@@ -545,3 +544,6 @@ function! JavaScriptFold()
 endfunction
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
+
+
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/

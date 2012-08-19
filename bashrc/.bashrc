@@ -163,10 +163,6 @@ else
     fi
 fi
 
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-. ~/.nvm/nvm.sh
-
 # {{{
 # Node Completion - Auto-generated, do not touch.
 shopt -s progcomp
@@ -175,3 +171,9 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+
+# nvm config
+. ~/nvm/nvm.sh
+
+# z configuation
+. /home/turgon/workSpace/configuration/repo/z/z.sh
