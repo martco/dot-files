@@ -8,5 +8,6 @@
 
 # set your theme.
 export ZSH_THEME="tUrG0n"
+export EDITOR="vim"
 
-cd ~/.yadr
+cd ~/workSpace
