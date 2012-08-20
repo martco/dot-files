@@ -11,11 +11,13 @@ function prompt_char {
     echo '±  '
 }
 
+function prompt_tUrG0n_chpwd {
+  setprompt
+}
 
-function prompt_sorin_precmd {
+function prompt_tUrG0n_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
-  setprompt
 
   if (( $+functions[git-info] )); then
     git-info
@@ -31,7 +33,12 @@ function prompt_tUrG0n_setup {
   autoload -Uz add-zsh-hook
 
   # Add hook for calling git-info before each command.
-  add-zsh-hook precmd prompt_sorin_precmd
+  add-zsh-hook precmd prompt_tUrG0n_precmd
+  # Add hook for redrawing screen only when changing dirs
+  add-zsh-hook chpwd prompt_tUrG0n_chpwd
+
+  # Create prompt
+  setprompt
 
   zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
   zstyle ':omz:module:editor:keymap:primary' overwrite ' %F{red}♺%f'
@@ -46,11 +53,11 @@ function prompt_tUrG0n_setup {
   zstyle ':omz:module:git' modified ' %%B%F{blue}✱%f%%b'
   zstyle ':omz:module:git' position ':%F{green}%p%f'
   zstyle ':omz:module:git' renamed ' %%B%F{magenta}➜%f%%b'
-  zstyle ':omz:module:git' stashed ' %%B%F{white}◼%f%%b'
+  zstyle ':omz:module:git' stashed ' %F{green}◼%f%%b'
   zstyle ':omz:module:git' unmerged ' %%B%F{yellow}═%f%%b'
   zstyle ':omz:module:git' untracked ' %%B%F{white}✭%f%%b'
   zstyle ':omz:module:git' info \
-    'prompt'  ' %F{blue}git%f$(coalesce "%b" "%p" "%c")%s' \
+    'prompt'  '%f(%F{blue}git%f$(coalesce "%b" "%p" "%c")%s)' \
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   zstyle ':vcs_info:*:prompt:*' unstagedstr   "${fmt_unstaged}"
@@ -84,7 +91,7 @@ function setprompt() {
 
   ### Finally, set the prompt
   PROMPT=${(F)lines}
-  PROMPT+='%F(${git_info:+${(e)git_info[prompt]} %F)}
+  PROMPT+='${${(e)git_info[prompt]}}
   %B%F{blue}╰─ $(prompt_char)%f%b'
   RPROMPT='${editor_info[keymap]}${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
 }
