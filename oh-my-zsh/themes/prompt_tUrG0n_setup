@@ -1,0 +1,100 @@
+#
+# A theme based on steeef theme
+#  * RVM info shown on the right
+#  * Git branch info on the left
+#  * Single line prompt
+#
+# Authors:
+#   Steve Losh <steve@stevelosh.com>
+#   Bart Trojanowski <bart@jukie.net>
+#   Brian Carper <brian@carper.ca>
+#   steeef <steeef@gmail.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Yan Pritzker <yan@pritzker.ws>
+
+function prompt_char {
+    git branch >/dev/null 2>/dev/null && echo '☿ ' && return
+    hg root >/dev/null 2>/dev/null && echo '±' && return
+    echo '±  '
+}
+
+
+function prompt_sorin_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  setprompt
+
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+}
+
+function prompt_tUrG0n_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook for calling git-info before each command.
+  add-zsh-hook precmd prompt_sorin_precmd
+
+  zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
+  zstyle ':omz:module:editor:keymap:primary' overwrite ' %F{red}♺%f'
+  zstyle ':omz:module:editor:keymap' alternate ' %F{yellow}❮%f%B%F{red}❮%f%b%F{red}❮%f'
+  zstyle ':omz:module:git' action ':%%B%F{yellow}%s%f%%b'
+  zstyle ':omz:module:git' added ' %%B%F{green}✚%f%%b'
+  zstyle ':omz:module:git' ahead ' %%B%F{yellow}⬆%f%%b'
+  zstyle ':omz:module:git' behind ' %%B%F{yellow}⬇%f%%b'
+  zstyle ':omz:module:git' branch ':%F{red}%b%f'
+  zstyle ':omz:module:git' commit ':%F{green}%.7c%f'
+  zstyle ':omz:module:git' deleted ' %%B%F{red}✖%f%%b'
+  zstyle ':omz:module:git' modified ' %%B%F{blue}✱%f%%b'
+  zstyle ':omz:module:git' position ':%F{green}%p%f'
+  zstyle ':omz:module:git' renamed ' %%B%F{magenta}➜%f%%b'
+  zstyle ':omz:module:git' stashed ' %%B%F{white}◼%f%%b'
+  zstyle ':omz:module:git' unmerged ' %%B%F{yellow}═%f%%b'
+  zstyle ':omz:module:git' untracked ' %%B%F{white}✭%f%%b'
+  zstyle ':omz:module:git' info \
+    'prompt'  ' %F{blue}git%f$(coalesce "%b" "%p" "%c")%s' \
+    'rprompt' '%A%B%S%a%d%m%r%U%u'
+
+  zstyle ':vcs_info:*:prompt:*' unstagedstr   "${fmt_unstaged}"
+  zstyle ':vcs_info:*:prompt:*' stagedstr     "${fmt_staged}"
+  zstyle ':vcs_info:*:prompt:*' actionformats "${fmt_branch}${fmt_action}"
+  zstyle ':vcs_info:*:prompt:*' formats       "${fmt_branch}"
+  zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
+}
+
+
+
+
+function setprompt() {
+  local -a lines infoline
+  local x i pet dungeon filler i_width i_pad
+  infoline=('\
+  %B%F{blue}╭─ %B%F{cyan}☁  %F(%B%F{green}%~%F)%F')
+
+  # Strip color to find text width & make the full-width filler
+  zstyle -T ":pr-nethack:" show-pet && i_pad=0
+
+  i_width=${(S)infoline//*} # search-and-replace color escapes
+  i_width=${#${(%)i_width}} # expand all escapes and count the chars
+
+  filler="%b%F{cyan}${(l:$(( $COLUMNS - $i_width + 28 ))::-:)}${reset}"
+  infoline[2]=( "\${infoline[2]} ${filler} " )
+
+  ### Now, assemble all prompt lines
+  lines+=( ${(j::)infoline} )
+
+
+  ### Finally, set the prompt
+  PROMPT=${(F)lines}
+  PROMPT+='%F(${git_info:+${(e)git_info[prompt]} %F)}
+  %B%F{blue}╰─ $(prompt_char)%f%b'
+  RPROMPT='${editor_info[keymap]}${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
+}
+
+
+prompt_tUrG0n_setup "$@"

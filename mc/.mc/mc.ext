@@ -690,7 +690,7 @@ shell/.torrent
 
 # Default target for anything not described above
 default/*
-	Open=
-	View=
+  Open=
+  View=
 
 ## EOF ###
