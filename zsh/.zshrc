@@ -49,4 +49,3 @@ fi
 if [[ -a ~/.secrets ]] then
   source ~/.secrets
 fi
-
