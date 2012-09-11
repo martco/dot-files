@@ -1,0 +1,21 @@
+syntax enable
+set guifont=Ubuntu\ Mono\ 11
+set background=dark
+colorscheme mine
+
+
+" disable menu & toolbar
+set guioptions-=m
+set guioptions-=T
+set guioptions-=R
+set guioptions-=r
+set guioptions-=b
+set guioptions-=B
+set guioptions-=L
+set guioptions-=l
+
+set novisualbell
+
+
+nmap <leader>w :w<CR>
+nmap <leader>q :wq<CR>
