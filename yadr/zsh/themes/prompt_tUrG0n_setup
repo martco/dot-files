@@ -96,8 +96,9 @@ function setprompt() {
 
 
   PROMPT+=${(F)lines}
-  PROMPT+='${${(e)git_info[prompt]}}
+  PROMPT+='${git_info:+${(e)git_info[prompt]}}
   %B%F{blue}╰─ $(prompt_char)%f%b'
+
   RPROMPT='${editor_info[keymap]}${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
 }
 
