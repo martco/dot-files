@@ -1,8 +1,7 @@
 syntax enable
 set guifont=Ubuntu\ Mono\ 11
 set background=dark
-colorscheme mine
-
+colorscheme tUrG0n
 
 " disable menu & toolbar
 set guioptions-=m
@@ -19,3 +18,15 @@ set novisualbell
 
 nmap <leader>w :w<CR>
 nmap <leader>q :wq<CR>
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+set lines=999
+set columns=999
