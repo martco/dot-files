@@ -43,6 +43,8 @@ git_bundles = %w{
   git://github.com/tomtom/tcommand_vim.git
   git://github.com/tpope/vim-markdown.git
 	git://github.com/vim-scripts/ZoomWin.git
+
+  git://github.com/Shougo/neocomplcache.git
 }
 
 require 'fileutils'
