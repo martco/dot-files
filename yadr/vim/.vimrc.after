@@ -1,5 +1,5 @@
 syntax enable
-set guifont=Ubuntu\ Mono\ 11
+set guifont=Inconsolata-dz:h12
 set background=dark
 colorscheme Tomorrow-Night
 
