@@ -5,8 +5,8 @@
 
 # define your own aliases or override those provided by YADR.
 
-alias ll='ls --color -halF'
-alias l='ls --color -CF'
+alias ll='ls -halF'
+alias l='ls -CF'
 alias le='less'
 
 # not only ls! :P
@@ -37,22 +37,10 @@ alias gitmodified="git st | grep modified | tr -s ' ' | cut -d ' ' -f 2 | xargs 
 # renaming
 alias ren="rename 's/^.*kbit //' *"
 
-alias vi="gvim"
 alias du=""
 alias du="du"
 alias Du='du -h -d 2'
 
 # fasd
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias ds='fasd -sid'     # interactive directory selection
-alias fs='fasd -sif'     # interactive file selection
-fasd_cd() { [ \$# -gt 1 ] && cd "\$(fasd -e echo "\$@")" || fasd "\$@"; }
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
-eval "$(fasd --init auto)"
