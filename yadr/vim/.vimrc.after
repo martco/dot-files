@@ -1,7 +1,7 @@
 syntax enable
 set guifont=Ubuntu\ Mono\ 11
 set background=dark
-colorscheme tUrG0n
+colorscheme Tomorrow-Night
 
 " disable menu & toolbar
 set guioptions-=m
@@ -30,3 +30,6 @@ noremap! <Right> <Esc>
 
 set lines=999
 set columns=999
+
+" Yes, I want to wrap lines
+set wrap
