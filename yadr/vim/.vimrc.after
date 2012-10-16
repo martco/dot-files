@@ -33,3 +33,8 @@ set columns=999
 
 " Yes, I want to wrap lines
 set wrap
+
+let g:Powerline_theme='default'
+let g:Powerline_colorscheme='default'
+
+let g:syntastic_auto_loc_list=0
