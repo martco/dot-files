@@ -2,6 +2,9 @@ syntax enable
 set guifont=Inconsolata-dz:h12
 set background=dark
 colorscheme Tomorrow-Night
+if has('gui_running')
+  colorscheme solarized
+endif
 
 " disable menu & toolbar
 set guioptions-=m
@@ -18,6 +21,7 @@ set novisualbell
 
 nmap <leader>w :w<CR>
 nmap <leader>q :wq<CR>
+map <CR>  o<Esc>
 
 noremap  <Up> ""
 noremap! <Up> <Esc>
