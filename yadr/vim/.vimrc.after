@@ -23,14 +23,6 @@ nmap <leader>w :w<CR>
 nmap <leader>q :wq<CR>
 map <CR>  o<Esc>
 
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
 
 set lines=999
 set columns=999
