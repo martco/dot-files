@@ -4,8 +4,9 @@
 #
 
 # define your own aliases or override those provided by YADR.
+alias ls='/usr/local/bin/gls --color'
 
-alias ll='ls -halF'
+alias ll='ls -halF -h --group-directories-first'
 alias l='ls -CF'
 alias le='less'
 
