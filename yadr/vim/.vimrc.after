@@ -3,7 +3,7 @@ set guifont=Inconsolata-dz:h12
 set background=dark
 colorscheme Tomorrow-Night
 if has('gui_running')
-  colorscheme solarized
+  colorscheme molokai
 endif
 
 " disable menu & toolbar
@@ -34,3 +34,34 @@ let g:Powerline_theme='default'
 let g:Powerline_colorscheme='default'
 
 let g:syntastic_auto_loc_list=0
+
+
+" Coffeetags stuff
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
+
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg)
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'black')
+call NERDTreeHighlightFile('html', 'green', 'black')
+call NERDTreeHighlightFile('styl', 'red', 'black')
+call NERDTreeHighlightFile('css', 'red', 'black')
+call NERDTreeHighlightFile('coffee', 'cyan', 'black')
