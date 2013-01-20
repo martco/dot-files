@@ -11,3 +11,5 @@ export ZSH_THEME="tUrG0n"
 export EDITOR="vim"
 
 cd ~/workSpace
+
+[[ -s /Users/turgon/.nvm/nvm.sh ]] && . /Users/turgon/.nvm/nvm.sh # This loads NVM

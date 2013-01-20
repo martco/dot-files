@@ -27,9 +27,6 @@ map <CR>  o<Esc>
 set lines=999
 set columns=999
 
-" Yes, I want to wrap lines
-set wrap
-
 let g:Powerline_theme='default'
 let g:Powerline_colorscheme='default'
 
